@@ -9,11 +9,37 @@
     .container {
         padding: 0 3%;
     }
-    .m-slider .image{
-    	height:598px!important;
+    .m-slider .image {
+        height: 598px!important;
     }
 }
 @media screen and (max-width: 780px) {
+    .sectionSlider-2 {
+        .container {
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+
+        .slick-dots {
+            display: none!important;
+        }
+        .slick-center {
+            // margin: 0 2px;
+            margin: 0;
+        }
+        .slick-slide {
+            img {
+                border-left: 2px solid #fff;
+                border-right: 2px solid #fff;
+            }
+        }
+    }
+    .sliderList-2 {
+        padding-top: 0;
+        .slick-list.draggable {
+            height: 101px!important;
+        }
+    }
     .is_pc_tb {
         display: none;
     }
@@ -33,10 +59,10 @@
         }
         font-size: 18px;
     }
-    .divider{
-        border-top:1px solid #6878B1;
-        margin-top:60px;
-        padding-bottom:60px;
+    .divider {
+        border-top: 1px solid #6878B1;
+        margin-top: 60px;
+        padding-bottom: 60px;
     }
     .navHeader li a {
         font-size: 14px;
@@ -85,7 +111,14 @@
     }
     .main-wrapper {
         padding-left: 0;
-        padding-top: 61px;
+        padding-top: 0px;
+        // padding-top: 61px;
+    }
+    /*------------------
+            spNavi
+    -----------------------------------*/
+    .sectionThumbnail .items a {
+        margin-left: 6px;
     }
     /*------------------
             paralaxSP
@@ -93,6 +126,14 @@
     .paralaxArea {
         height: 320px;
         background: url("../images/paralax.jpg") center fixed;
+    }
+    .paralaxArea_p2 {
+        height: 320px;
+        background: url("../images/subpage/pl_image02.jpg") center fixed;
+    }
+    .paralaxArea_p3 {
+        height: 320px;
+        background: url("../images/subpage/pl_image03.jpg") center fixed;
     }
     /*------------------
             sectionSlider
@@ -114,10 +155,13 @@
     .slick-list.draggable {
         height: inherit;
     }
-    .slick-dots li button {
-        width: 40px !important;
-        margin:0 6px!important;
-        left:0;
+    .slick-dots {
+        left: 0;
+        li button {
+           width: 40px !important;
+           margin: 0 6px !important;
+           left: 0;
+       }
     }
     /*------------------
             sectionNews
@@ -125,6 +169,7 @@
     .sectionNews {
         border-bottom: none;
         padding: 25px 0 35px;
+        padding-top: 60px;
         .titleSection {
             display: block;
             padding-bottom: 20px;
@@ -231,9 +276,20 @@
     -----------------------------------*/
     .sectionBreadcrumb {
         min-height: inherit;
-        height:120px;
+        height: 120px;
         .content {
             padding: 15px;
+        }
+        .content_Rec {
+            padding: 15px;
+        }
+        .title_Rec {
+            text-align: left;
+            width: 100%;
+        }
+        .name_Rec {
+            text-align: left;
+            width: 100%;
         }
     }
     /*------------------
@@ -258,7 +314,7 @@
         .listItems {
             display: block;
             margin: 0;
-            width:100%;
+            width: 100%;
             background: #fff none repeat scroll 0 0;
             border-top: 1px solid $color-8;
             border-bottom: 1px solid $color-8;
@@ -268,14 +324,14 @@
             width: 50%;
             text-align: left;
             border-bottom: 1px solid $color-8;
-            margin-top:0;
-            padding:12px 14px;
-            min-width:50%;
+            margin-top: 0;
+            padding: 12px 14px;
+            min-width: 50%;
             &:before {
                 content: "";
                 position: absolute;
                 left: 10px;
-                top: 16px;
+                top: 21px;
                 width: 6px;
                 height: 10px;
                 background: url('../images/subPage/arrowTh.png') no-repeat;
@@ -319,7 +375,7 @@
             padding-bottom: 25px;
         }
         .description {
-            padding-top: 23px;
+            padding: 23px 0 0;
             p {
                 font-size: 12px;
                 padding-bottom: 15px;
@@ -368,7 +424,7 @@
         .listMap {
             border: none;
             padding: 0;
-            margin: 0px;
+            margin: 0;
         }
         .itemMap {
             padding-top: 5px;
@@ -423,7 +479,6 @@
         //     font-size: 12px;
         // }
     }
-
     /*------------------
             .sectionAbout01
     -----------------------------------*/
@@ -741,16 +796,21 @@
     /*------------------
             recruit
     -----------------------------------*/
-	.sectionRecruit{
-		margin:0 auto;
-		// padding:0 7%;
-        .entryBtnSp{
-            text-align:center;
-            img{
-                width:100px;
+    .sectionRecruit {
+        margin: 0 auto;
+        // padding:0 7%;
+        .entryBtnSp {
+            text-align: center;
+            img {
+                width: 100px;
             }
         }
-	}
+    }
+    .sectionBreadcrumb.recruitImg{
+        background: #f8f5f5 url("../images/subpage/img_recruit_main_sp.jpg") no-repeat scroll center center;
+        min-height: 540px;
+        position: relative;
+    }
     /*------------------
             footer
     -----------------------------------*/
@@ -773,9 +833,9 @@
             dummy
     -----------------------------------*/
     .dummyPr {
-    	margin:0 auto;
-    	min-width:inherit;
-    	width:100%;
+        margin: 0 auto;
+        min-width: inherit;
+        width: 100%;
     }
     // end mobile
 }

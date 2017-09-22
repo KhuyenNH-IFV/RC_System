@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="システムの連携を重視し、効率的な業務のお手伝い。システムと機械の融合。「株式会社システマック」">
-<meta name="keywords" content="システマック,LASシステム,折込チラシ,新聞発送,物流システム,業務システム">
-<title>株式会社システマック</title>
+    <meta name="keywords" content="システマック,LASシステム,折込チラシ,新聞発送,物流システム,業務システム">
+    <title>株式会社システマック</title>
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width">
     <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -66,8 +66,8 @@
                         <div class="gnav-secondary-options">
                             <ul class="subNavS">
                                 <li><a href="product.html">製品案内トップ</a></li>
-                                <li><a href="product2.html">新聞社向け</a></li>
-                                <li><a href="product3.html">折込チラシ業向け</a></li>
+                                <li><a href="product2.html">新聞社向け製品</a></li>
+                                <li><a href="product3.html">折込広告会社向け製品</a></li>
                                 <li><a href="product4.html">その他システム・製品</a></li>
                             </ul>
                         </div>
@@ -100,8 +100,6 @@
     <!-- ============= /Header ============= -->
 
     <section class="main-wrapper">
-
-        <!-- /sectionBreadcrumb -->
         <div class="sectionBreadcrumb">
             <div class="content">
                 <h2 class="title"><img class="is_pc_tb" src="images/subpage/breadcrumb_service.png" alt="SERVICE"><span class="is_mb">SERVICE</span></h2>
@@ -109,21 +107,52 @@
             </div>
             <div class="note">※背景イメージ写真</div>
         </div>
-        <!-- /sectionThumbnail -->
-        <div class="sectionAccess">
+        <!-- /sectionBreadcrumb -->
+
+		<div class="sectionProduct07">
             <div class="container">
-                <!--<h2 class="titleSection"><img src="images/subpage/title_service.png" alt="事業案内" class="is_pc"><span class="shortTitle is_mb">事業案内</span></h2>-->
-				<img src="images/subpage/service_dummycontents.jpg">
+                <!--<h2 class="titleSection"><img src="images/subpage/title_12.png" alt="PRODUCT" class="is_pc"><span class="shortTitle is_mb">PRODUCT</span></h2>-->
+                <ul class="listNews">
+                    <li class="item" onclick="location.href='service2.html'">
+                        <div class="avatar">
+                            <a href="service2.html"><img src="images/subpage/img_service1_01.jpg" alt=""></a>
+                        </div>
+                        <div class="description">
+                            <h2 class="titleI">システム・ソフトウエア開発</h2>
+                            <p class="txtI">テキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮です
+                            </p>
+                            <a class="btnMore" href="service2.html"><img class="btnNewsM is_pc" src="images/subpage/btnProduct-ovoff.jpg" alt="詳細はこちら"></a>
+                        </div>
+                    </li>
+                    <li class="item" onclick="location.href='service3.html'">
+                        <div class="avatar">
+                            <a href="service3.html"><img src="images/subpage/img_service1_02.jpg" alt=""></a>
+                        </div>
+                        <div class="description">
+                            <h2 class="titleI">折込広告会社向け製品</h2>
+                            <p class="txtI">テキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮です
+                            </p>
+                            <a class="btnMore" href="service3.html"><img class="btnNewsM is_pc" src="images/subpage/btnProduct-ovoff.jpg" alt="詳細はこちら"></a>
+                        </div>
+                    </li>
+					
+                    <li class="item" onclick="location.href='service4.html'">
+                        <div class="avatar">
+                            <a href="service4.html"><img src="images/subpage/img_service1_03.jpg" alt=""></a>
+                        </div>
+                        <div class="description">
+                            <h2 class="titleI">その他システム・製品</h2>
+                            <p class="txtI">テキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮ですテキストは仮です
+                            </p>
+                            <a class="btnMore" href="service4.html"><img class="btnNewsM is_pc" src="images/subpage/btnProduct-ovoff.jpg" alt="詳細はこちら"></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- /sectionAbout01 -->
 
-
-
-
-
-        <!-- /sectionThumbnail -->
-
+        <!-- /sectioService -->
+		
     </section>
     <!-- /Content body -->
 
@@ -168,13 +197,17 @@
                 "opacity": "1"
             });
             $('.gnav').css("left", "0");
+            $('.listNews .item').hover(function() {
+                var url = $(this).find('.btnNewsM');
+                $(this).find('.btnNewsM').attr('src', $(this).find('.btnNewsM').attr('src').replace('-ovoff', '-ovon'));
+            }, function() {
+                $(this).find('.btnNewsM').attr('src', $(this).find('.btnNewsM').attr('src').replace('-ovon', '-ovoff'));
+            });
             $('.sectionSlider .titleSection').css({
                 "opacity": "1",
                 "top": "253px"
             });
-            $('.sectionProduct07 .item').css({
-                "display": "block"
-            });
+
         }
     </script>
 </body>

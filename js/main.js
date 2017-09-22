@@ -13,29 +13,36 @@ var fadeTopEffect = {
     },
 }
 
+
 $(document).ready(function() {
     // Check version IE
     if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
         $('body').append("<link rel='stylesheet' type='text/css' href='css/ieOnly.css' />");
     }
 
-    // Slider-in menu left
-    $('.gnav').css("left", "0");
-
-    // Fade title slider
-    $('.sectionSlider .titleSection').css({
-        "opacity": "1",
-        "top": "253px"
-    });
-
-    fadeTopEffect.setInit();
-    // Show five news first : PC
-    $('.contentSection .itemTopic:gt(4)').hide();
+    // fade list title Slider
+    setTimeout(function() {
+        $('.sectionSlider .titleSection:first').addClass('fadeUp');
+    }, 500);
+    setTimeout(function() {
+        $('.sectionSlider .titleSection').eq(1).addClass('fadeUp');
+    }, 1000);
+    setTimeout(function() {
+        $('.sectionSlider .titleSection:first').fadeOut('');
+        $('.sectionSlider .titleSection').eq(1).fadeOut('');
+        $('.sectionSlider .titleSection').eq(2).addClass('fadeUp');
+    }, 2000);
 
     // Show three news first : Mobile
     var widthBr = $(window).width();
     var heightBr = $(window).height();
     if (widthBr <= 768) {
+        // Option slider 02
+        var flagActive = true;
+        var slidesToScroll_number = 1;
+        var slidesToScroll_show = 1;
+        var widthCenter = '20px';
+
         $('.contentSection .itemTopic:gt(2)').hide();
         $(window).scroll(function(event) {
             if ($(this).scrollTop() > indexListMenu - 62) {
@@ -53,8 +60,39 @@ $(document).ready(function() {
         $('.m-slider').css('height', heightSlider);
         $('.m-slider .image').css('height', heightSlider);
         $('.slick-list.draggable').css('height', heightSlider);
-
+    } else {
+        var flagActive = false;
+        var slidesToScroll_number = 2;
+        var slidesToScroll_show = 2;
+        var widthCenter = '0px';
     }
+
+    // slider 02 TopPage
+    $('.sliderList-2').slick({
+        centerPadding: widthCenter,
+        dots: true,
+        infinite: true,
+        centerMode: flagActive,
+        slidesToShow: slidesToScroll_show,
+        slidesToScroll: slidesToScroll_number
+    });
+
+setTimeout(function () {
+    var aaa = $('.slick-track').css('left');
+    console.log(aaa);
+}, 3000);
+    // Slider-in menu left
+    $('.gnav').css("left", "0");
+
+    // Fade title slider
+    $('.sectionSlider .titleSection').css({
+        "opacity": "1",
+        "top": "253px"
+    });
+
+    fadeTopEffect.setInit();
+    // Show five news first : PC
+    $('.contentSection .itemTopic:gt(4)').hide();
 
     // Toggle nav mobile
     $('.wrapheaderMb .toggle').click(function(event) {

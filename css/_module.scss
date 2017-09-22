@@ -75,7 +75,7 @@ a img {
     display: none !important;
 }
 .is_pc {
-    display: inherit !important;
+    display: inherit;
 }
 .clearfix {
     clear: both;
@@ -246,6 +246,18 @@ a img {
     opacity: 1;
     transform: translate(0px, 0px);
 }
+
+@keyframes fadeTitleSlider {
+    0% {
+        transform: translate(0px, 100px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
 
 // @keyframes imgSlider {
 //     0%   {top: calc(50% - 0px); opacity: 0}
